@@ -12,7 +12,6 @@ rol:	@ rol(x,r) 1stx=r0	2ndx=r1 r=r2
 	str r6,[sp,#12]
 	str r7,[sp,#16]
 	
-	
 	lsl r4,r0,r2	@ r4 = 1stx<<r
 	mov r5,#32
 	sub r5,r5,r2	@ r5 = 32-r
@@ -34,8 +33,6 @@ rol:	@ rol(x,r) 1stx=r0	2ndx=r1 r=r2
 	ldr r7,[sp,#16]
 	add sp,sp,#20
 	mov pc,lr
-	
-	
 	
 	
 ror:	@ ror(x,r) 1stx=r0	2ndx=r1 r=r2
@@ -61,7 +58,6 @@ ror:	@ ror(x,r) 1stx=r0	2ndx=r1 r=r2
 	mov r0,r4		@ return 1stx from r0
 	mov r1,r5		@ return 2ndx from r1
 	
-	
 	@ restore callee reserved registers
 	ldr lr,[sp,#0]
 	ldr r4,[sp,#4]
@@ -70,8 +66,6 @@ ror:	@ ror(x,r) 1stx=r0	2ndx=r1 r=r2
 	ldr r7,[sp,#16]
 	add sp,sp,#20
 	mov pc,lr	
-	
-	
 	
 	
 r:		@ r(x,y,k)	1stx=r0  2ndx=r1  1sty=r2  2ndy=r3  1stk=r4  2ndk=r5
@@ -135,7 +129,6 @@ r:		@ r(x,y,k)	1stx=r0  2ndx=r1  1sty=r2  2ndy=r3  1stk=r4  2ndk=r5
 	ldr r11,[sp,#24]
 	add sp,sp,#28
 	mov pc,lr	
-	
 	
 	
 encrypt:	@ base pt[0]y=r0 pt[1]x=r1 k[0]b=r2 k[1]a=r3
@@ -239,8 +232,6 @@ exit:
 	ldr r11,[sp,#32]
 	add sp,sp,#36
 	mov pc,lr
-	
-	
 	
 	
 	.global main
